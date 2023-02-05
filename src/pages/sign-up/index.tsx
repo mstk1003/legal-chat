@@ -1,5 +1,7 @@
+// TODO _app.tsxにwithAuthentificateでラップしたことで、サインイン/サインアップページは実装できたので、本ファイルは不要になるかも
 import { Button, TextField } from "@mui/material";
 import { Auth } from "aws-amplify";
+import Router from "next/router";
 import { useState } from "react";
 
 function SignUp() {
@@ -17,6 +19,7 @@ function SignUp() {
         password: signUpInfo.password,
       });
       console.log(user);
+      Router.push("/user/create");
     } catch (error) {
       console.log("error signing up:", error);
     }

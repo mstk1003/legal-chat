@@ -7,7 +7,17 @@ import "@fontsource/roboto/700.css";
 import { Amplify } from "aws-amplify";
 import awsconfig from "@/src/aws-exports";
 
+import { withAuthenticator } from "@aws-amplify/ui-react";
+import "@aws-amplify/ui-react/styles.css";
+
+// Amplify.configure(awsconfig);
+// export default function App({ Component, pageProps }: AppProps) {
+//   return <Component {...pageProps} />;
+// }
+
 Amplify.configure(awsconfig);
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }
+
+export default withAuthenticator(App);
