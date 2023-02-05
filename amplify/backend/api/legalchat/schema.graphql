@@ -1,10 +1,25 @@
-type Talk @model @auth(rules: [{allow: public}]) {
+type Talk
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read] }
+      { allow: private, operations: [create, read] }
+    ]
+  ) {
   id: ID!
   chatID: ID! @index(name: "byChat")
   User: User @hasOne
 }
 
-type Chat @model @auth(rules: [{allow: public}]) {
+# TODO Chatの読み書き編集は、認証ユーザーかつquestionerかanswererしかできないようにする
+type Chat
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read] }
+      { allow: private, operations: [read, create, update] }
+    ]
+  ) {
   id: ID!
   questioner: User @hasOne
   answerer: User @hasOne
@@ -13,7 +28,7 @@ type Chat @model @auth(rules: [{allow: public}]) {
   watchers: [User] @manyToMany(relationName: "ChatUser")
 }
 
-type User @model @auth(rules: [{allow: public}]) {
+type User @model @auth(rules: [{ allow: public }]) {
   id: ID!
   account: String!
   name: String
