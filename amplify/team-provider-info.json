@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-legalchat-staging-35002-authRole",
+      "UnauthRoleArn": "arn:aws:iam::437354820511:role/amplify-legalchat-staging-35002-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::437354820511:role/amplify-legalchat-staging-35002-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-legalchat-staging-35002-deployment",
+      "UnauthRoleName": "amplify-legalchat-staging-35002-unauthRole",
+      "StackName": "amplify-legalchat-staging-35002",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:437354820511:stack/amplify-legalchat-staging-35002/2bd16ce0-a508-11ed-a394-0ead81513f9f",
+      "AmplifyAppId": "d3iq9teif0zgk4"
+    },
+    "categories": {
+      "auth": {
+        "legalchat": {}
+      }
+    }
+  }
+}
